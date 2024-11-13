@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hiking - My Hobby</title>
+    <style>
+      body {
+        background: linear-gradient(
+          99.6deg,
+          rgb(112, 128, 152) 10.6%,
+          rgb(242, 227, 234) 32.9%,
+          rgb(234, 202, 213) 52.7%,
+          rgb(220, 227, 239) 72.8%,
+          rgb(185, 205, 227) 81.1%,
+          rgb(154, 180, 212) 102.4%
+        );
+      }
+      h1 {
+        text-align: center;
+        font-family: monospace;
+      }
+      h2 {
+        text-align: center;
+        font-family: monospace;
+      }
+      img {
+        max-width: 100%;
+      }
+      button {
+        display: block;
+        margin: 0 auto;
+        font-size: 20px;
+        border: 1px solid darkblue;
+        border-radius: 20px;
+        padding: 10px 15px;
+        background: darkgreen;
+        transition: all 150ms ease-in-out;
+      }
+      button:hover {
+        background: white;
+        cursor: pointer;
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.5;
+        font-family: monospace;
+      }
+      footer {
+        text-align: center;
+        margin: 10px 0;
+        font-size: 18px;
+        font-family: monospace;
+      }
+      .container {
+        max-width: 600px;
+        background: #e7f0dc;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px auto;
+      }
+      .theme {
+        font-size: 20px;
+        background: #113f67;
+        color: lightseagreen;
+        padding: 5 8px;
+      }
+      .theme:hover {
+        color: black;
+        background: lightcyan;
+      }
+      .walking {
+        border-radius: 10px;
+        transition: all 150ms ease-in-out;
+      }
+      .walking:hover {
+        filter: contrast(80%);
+        transform: scale(1.1);
+      }
+      .grid-gallery {
+        margin: 15px 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 15px;
+      }
+      .grid-gallery img {
+        width: 100%;
+        border-radius: 8px;
+        transition: all 200ms ease-in-out;
+      }
+      .grid-gallery img:hover {
+        transform: scale(2);
+      }
+      .dark-theme {
+        background: linear-gradient(
+          114.3deg,
+          rgb(19, 126, 57) 0.2%,
+          rgb(8, 65, 91) 68.5%
+        );
+        color: black;
+      }
+      .dark-theme .container {
+        background: #bbe9db;
+      }
+      .dark-theme a {
+        color: #f67280;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="theme">CHANGE THEME</button>
+    <div class="container">
+      <h1>Hiking⛰️</h1>
+      <h2>What I Love About Hiking</h2>
+      <a href="https://en.wikipedia.org/wiki/Hiking" target="_blank">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/132/654/original/20240623_130346.jpg?1720688798"
+          alt=""
+          class="walking"
+        />
+      </a>
+      <div class="grid-gallery">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/132/652/original/20240623_150504.jpg?1720687555"
+          alt=""
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/132/655/original/20230521_124458.jpg?1720688825"
+          alt=""
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/132/656/original/20230129_160217.jpg?1720688842"
+          alt=""
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/132/653/original/20240623_171021.jpg?1720688788"
+          alt=""
+        />
+      </div>
+      <p>
+        Hiking is a long, vigorous walk, usually on trails or footpaths in the
+        countryside. Walking for pleasure developed in Europe during the
+        eighteenth century.[1] Religious pilgrimages have existed much longer
+        but they involve walking long distances for a spiritual purpose
+        associated with specific religions.
+      </p>
+      <p>
+        <a href="https://en.wikipedia.org/wiki/Hiking" target="_blank">
+          <strong>📖Read on Wikipedia</strong>
+        </a>
+      </p>
+      <button class="hiking-group">Group Hiking</button>
+    </div>
+    <footer>
+      Coded by
+      <a href="https://www.linkedin.com/in/kellyvisagie93/" target="_blank">
+        Kelly Visagie </a
+      >😎
+    </footer>
+    <script>
+      function groupName() {
+        let name = prompt("What is your name?");
+        let email = prompt("What is your email address?");
+        alert(
+          "Thank you for joining our hiking group, " +
+            name +
+            "!, We'll send you the schedule of the following hiking trails via email"
+        );
+      }
+
+      function changeBackground() {
+        let body = document.querySelector("body");
+
+        if (body.classList.contains("dark-theme")) {
+          body.classList.remove("dark-theme");
+        } else {
+          body.classList.add("dark-theme");
+        }
+      }
+
+      let natureButton = document.querySelector(".hiking-group");
+      natureButton.addEventListener("click", groupName);
+
+      let themeButton = document.querySelector(".theme");
+      themeButton.addEventListener("click", changeBackground);
+    </script>
+  </body>
+</html>
